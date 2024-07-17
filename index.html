@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de Texto</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Encriptador de Texto</h1>
+    </header>
+    <main>
+        <section class="input-section">
+            <textarea id="inputText" placeholder="Ingrese el texto aquí"></textarea>
+            <div class="buttons">
+                <button id="encryptButton">Encriptar</button>
+                <button id="decryptButton">Desencriptar</button>
+            </div>
+            <p class="note">* Escriba letras minúsculas y sin acento.</p>
+        </section>
+        <section class="output-section">
+            <img id="placeholderImage" src="placeholder.png" alt="Placeholder">
+            <div id="outputContainer">
+                <div id="outputText" style="display: none;"></div>
+                <button id="copyButton" style="display: none;">Copiar</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Desarrollado por Edwin C</p>
+    </footer>
+    <script src="encriptador.js"></script>
+</body>
+</html>
+
+
