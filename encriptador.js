@@ -1,10 +1,10 @@
-document.getElementById('encryptButton').addEventListener('click', () => {
+document.getElementById('boton_encriptar').addEventListener('click', () => {
     const inputText = document.getElementById('inputText').value;
     const encryptedText = encryptText(inputText);
     displayOutput(encryptedText);
 });
 
-document.getElementById('decryptButton').addEventListener('click', () => {
+document.getElementById('boton_desencriptar').addEventListener('click', () => {
     const inputText = document.getElementById('inputText').value;
     const decryptedText = decryptText(inputText);
     displayOutput(decryptedText);
@@ -35,11 +35,12 @@ function decryptText(text) {
 
 function displayOutput(text) {
     const placeholderImage = document.getElementById('placeholderImage');
+    const outputContainer = document.getElementById('outputContainer');
     const outputText = document.getElementById('outputText');
     const copyButton = document.getElementById('copyButton');
 
     placeholderImage.style.display = 'none';
-    outputText.style.display = 'block';
+    outputContainer.style.display = 'block';
     outputText.innerText = text;
     copyButton.style.display = 'block';
 }

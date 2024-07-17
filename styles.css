@@ -1,59 +1,91 @@
+/* Importación de fuentes de Google */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Estilos generales */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-primario: #EFF1FA;
+    --color-secundario: #FFFFFF;
+    --color-terciario: #0A3871;
+    --color-cajas: #EFF1FA;
+
+    --color-botones: #0A3871;
+    --color-botones2: #FFFFFF;
+
+    --color-texto: #0A3871;
+    --color-texto2: #FFFFFF;
+
+    --fuente-principal: 'Montserrat', sans-serif;
+    --fuente-secundaria: 'Krona One', sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: var(--fuente-principal);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
     margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
+    padding: 20px;
+    background-color: var(--color-primario);
 }
 
 header, footer {
     width: 100%;
     text-align: center;
-    background-color: #f8f8f8;
+    background-color: var(--color-secundario);
     padding: 1em;
+    color: var(--color-texto);
 }
 
 header h1 {
     margin: 0;
+    font-family: var(--fuente-secundaria);
 }
 
 main {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
-    background-color: #fff;
-    padding: 20px;
+    justify-content: space-between;
+    background-color: var(--color-secundario);
+    padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    gap: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
 }
 
-.input-section, .output-section {
+.seccion_entrada, .seccion_salida {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 50%;
+    max-width: 45%;
+    gap: 20px;
 }
 
 textarea {
+    background-color: var(--color-cajas);
+    color: var(--color-texto);
     width: 100%;
     height: 200px;
-    margin-bottom: 10px;
-    padding: 10px;
+    padding: 20px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-.buttons {
+.botones {
     display: flex;
-    gap: 10px;
-    margin-bottom: 10px;
+    gap: 20px;
 }
 
 button {
@@ -64,53 +96,53 @@ button {
     border-radius: 5px;
 }
 
-#encryptButton {
-    background-color: #007bff;
-    color: white;
+#boton_encriptar {
+    background-color: var(--color-botones);
+    color: var(--color-texto2);
 }
 
-#decryptButton {
-    background-color: #fff;
-    border: 1px solid #007bff;
-    color: #007bff;
+#boton_desencriptar {
+    background-color: var(--color-botones2);
+    border: 1px solid var(--color-botones);
+    color: var(--color-botones);
 }
 
-.note {
+.nota {
     font-size: 12px;
     color: #555;
 }
 
-.output-section {
+.seccion_salida {
     position: relative;
     width: 100%;
-    max-width: 50%;
+    max-width: 45%;
+}
+
+#placeholderImage {
+    width: 100%;
+    height: auto;
 }
 
 #outputContainer {
     width: 100%;
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: var(--color-cajas);
     text-align: center;
-}
-
-#placeholderImage {
-    max-width: 100%;
-    height: auto;
+    display: none;
 }
 
 #outputText {
     font-size: 16px;
     word-wrap: break-word;
-    display: none;
 }
 
 #copyButton {
     margin-top: 10px;
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #007bff;
+    background-color: var(--color-botones);
     color: white;
     border: none;
     border-radius: 5px;
@@ -119,19 +151,14 @@ button {
 }
 
 /* Estilos responsivos */
-@media (max-width: 1200px) {
-    main {
-        flex-direction: column;
-    }
-
-    .input-section, .output-section {
-        max-width: 100%;
-    }
-}
-
 @media (max-width: 768px) {
     main {
-        padding: 10px;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .seccion_entrada, .seccion_salida {
+        max-width: 100%;
     }
 
     textarea {
@@ -141,29 +168,6 @@ button {
     button {
         padding: 10px 15px;
         font-size: 14px;
-    }
-
-    #outputContainer {
-        padding: 5px;
-    }
-
-    #outputText {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 480px) {
-    textarea {
-        height: 100px;
-    }
-
-    button {
-        padding: 8px 10px;
-        font-size: 12px;
-    }
-
-    #outputText {
-        font-size: 12px;
     }
 }
 
