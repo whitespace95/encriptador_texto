@@ -1,16 +1,16 @@
-document.getElementById('encryptButton').addEventListener('click', () => {
-    const inputText = document.getElementById('inputText').value;
+document.getElementById('boton_encriptar').addEventListener('click', () => {
+    const inputText = document.getElementById('texto_entrada').value;
     const encryptedText = encryptText(inputText);
     displayOutput(encryptedText);
 });
 
-document.getElementById('decryptButton').addEventListener('click', () => {
-    const inputText = document.getElementById('inputText').value;
+document.getElementById('boton_desencriptar').addEventListener('click', () => {
+    const inputText = document.getElementById('texto_entrada').value;
     const decryptedText = decryptText(inputText);
     displayOutput(decryptedText);
 });
 
-document.getElementById('copyButton').addEventListener('click', () => {
+document.getElementById('botonCopiar').addEventListener('click', () => {
     const outputText = document.getElementById('outputText');
     navigator.clipboard.writeText(outputText.innerText).then(() => {
         alert('Texto copiado al portapapeles');
@@ -34,12 +34,13 @@ function decryptText(text) {
 }
 
 function displayOutput(text) {
-    const placeholderImage = document.getElementById('placeholderImage');
+    const placeholderImage = document.getElementById('imagenSalida');
+    const outputContainer = document.getElementById('outputContainer');
     const outputText = document.getElementById('outputText');
-    const copyButton = document.getElementById('copyButton');
+    const copyButton = document.getElementById('botonCopiar');
 
     placeholderImage.style.display = 'none';
-    outputText.style.display = 'block';
+    outputContainer.style.display = 'block';
     outputText.innerText = text;
     copyButton.style.display = 'block';
 }

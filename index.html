@@ -8,22 +8,22 @@
 </head>
 <body>
     <header>
-        <h1>Encriptador de Texto</h1>
+        <h1 class="titulo_encriptador">Encriptador de Texto</h1>
     </header>
     <main>
-        <section class="input-section">
-            <textarea id="inputText" placeholder="Ingrese el texto aquí"></textarea>
-            <div class="buttons">
-                <button id="encryptButton">Encriptar</button>
-                <button id="decryptButton">Desencriptar</button>
+        <section class="seccion_entrada">
+            <textarea id="texto_entrada" placeholder="Ingrese el texto aquí"></textarea>
+            <div class="botones">
+                <button id="boton_encriptar">Encriptar</button>
+                <button id="boton_desencriptar">Desencriptar</button>
             </div>
-            <p class="note">* Escriba letras minúsculas y sin acento.</p>
+            <p class="nota">* Solo letras minúsculas y sin acento.</p>
         </section>
-        <section class="output-section">
-            <img id="placeholderImage" src="placeholder.png" alt="Placeholder">
+        <section class="seccion_salida">
+            <img id="imagenSalida" src="imagen1.png" alt="Imagen de referencia">
             <div id="outputContainer">
-                <div id="outputText" style="display: none;"></div>
-                <button id="copyButton" style="display: none;">Copiar</button>
+                <textarea id="outputText" readonly></textarea>
+                <button id="botonCopiar">Copiar</button>
             </div>
         </section>
     </main>
@@ -33,5 +33,6 @@
     <script src="encriptador.js"></script>
 </body>
 </html>
+
 
 
